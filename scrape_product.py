@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Written as part of https://www.scrapehero.com/how-to-scrape-amazon-product-reviews-using-python/		
 from lxml import html  
 import json
 import requests

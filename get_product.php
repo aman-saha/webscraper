@@ -7,4 +7,5 @@
 <?php
 	$data = file_get_contents("data.json");
 	$json_data = json_decode($data, true);
+	print_r($json_data);
 ?>
