@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+#written by @amansaha
 from lxml import html  
 import json
 import requests
