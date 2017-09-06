@@ -119,13 +119,13 @@ def ParseReviews(asin):
 			
 def ReadAsin():
 	#Add your own ASINs here 
-	AsinList = ['B00YD547Q6']
+	AsinList = ['B00YD547Q6','B06Y14T5YW']
 	extracted_data = []
 	for asin in AsinList:
 		print "Downloading and processing page http://www.amazon.com/dp/"+asin
 		extracted_data.append(ParseReviews(asin))
 		sleep(5)
-	f=open('data.json','w')
+	f = open('data.json','w')
 	json.dump(extracted_data,f,indent=4)
 
 if __name__ == '__main__':
