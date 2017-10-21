@@ -119,7 +119,7 @@ def ParseReviews(asin):
 			
 def ReadAsin():
 	#Add your own ASINs here 
-	AsinList = ['B00YD547Q6','B06Y14T5YW']
+	AsinList = ['B00YD547Q6']
 	extracted_data = []
 	for asin in AsinList:
 		print "Downloading and processing page http://www.amazon.com/dp/"+asin
