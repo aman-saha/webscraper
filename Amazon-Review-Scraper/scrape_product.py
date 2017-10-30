@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #written by @amansaha
+import MySQLdb
 from lxml import html  
 import json
 import requests
@@ -118,15 +119,32 @@ def ParseReviews(asin):
 	return {"error":"failed to process the page","asin":asin}
 			
 def ReadAsin():
-	#Add your own ASINs here 
+	db = MySQLdb.connect(host="localhost",    # your host, usually localhost
+                     user="root",         # your username
+                     passwd="root",  # your password
+                     db="amazon_products")        # name of the data base
+
+	# you must create a Cursor object. It will let
+	#  you execute all the queries you need
+	cur = db.cursor()
+
+	# Use all the SQL you like
+	cur.execute("SELECT * FROM phones")
 	AsinList = ['B00YD547Q6']
+	# print all the first cell of all the rows
+	for row in cur.fetchall():
+	    AsinList.append(row[2]);
+
+	#Add your own ASINs here 
+	print AsinList
 	extracted_data = []
 	for asin in AsinList:
 		print "Downloading and processing page http://www.amazon.com/dp/"+asin
 		extracted_data.append(ParseReviews(asin))
-		sleep(5)
+		sleep(10)
 	f = open('data.json','w')
 	json.dump(extracted_data,f,indent=4)
+	db.close()
 
 if __name__ == '__main__':
 	ReadAsin()

@@ -6,7 +6,7 @@
     $DB_SERVER="127.0.0.1";
     $DB_USER="root";
     $DB_PASS="root";
-    $DB_NAME="tag";
+    $DB_NAME="amazon_products";
 
 //set timezone
     date_default_timezone_set('Asia/Calcutta');

@@ -43,7 +43,7 @@
 
 	*/
 
-		$documentLocation = '../../Flipkart-Review-Scraper/flipreview.txt';
+		$documentLocation = '../../Flipkart-Review-Scraper/flireview.txt';
 		$sentimentAnalysisOfDocument = $sat->analyzeDocument($documentLocation);
 		$resultofAnalyzingDocument = $sentimentAnalysisOfDocument['sentiment'];
 		$probabilityofDocumentBeingPositive = $sentimentAnalysisOfDocument['accuracy']['positivity'];
