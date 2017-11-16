@@ -96,3 +96,183 @@
 1509277928257	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
 1509277928519	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
 1509277929606	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210328964	geckodriver	INFO	geckodriver 0.19.0
+1510210329002	geckodriver	INFO	Listening on 127.0.0.1:60421
+1510210330233	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.eUIcA4YM3ale"
+1510210334211	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1510210335947	Marionette	INFO	Enabled via --marionette
+1510210341948	Marionette	INFO	Listening on port 39669
+1510210341980	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510210342027	Marionette	DEBUG	Register listener.js for window 2147483649
+1510210342054	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510210345296	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1510210345296	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript error: https://img1a.flixcart.com/www/linchpin/fk-cp-zion/js/manifest.6545e7da.js, line 1: TypeError: e[r] is undefined
+1510210462652	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510210462691	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510210502021	geckodriver	INFO	geckodriver 0.19.0
+1510210502024	geckodriver	INFO	Listening on 127.0.0.1:37295
+1510210503163	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.ecnIDxRoijfx"
+1510210503380	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1510210503955	Marionette	INFO	Enabled via --marionette
+1510210506634	Marionette	INFO	Listening on port 43623
+1510210506698	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510210506739	Marionette	DEBUG	Register listener.js for window 2147483649
+1510210506765	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510210508139	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1510210508139	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1510210514038	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510210519032	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510210520199	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210520446	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210522393	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210522653	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210522900	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210524136	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210525281	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210525528	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210526616	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210526860	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210527100	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510210529883	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211111945	geckodriver	INFO	geckodriver 0.19.0
+1510211111949	geckodriver	INFO	Listening on 127.0.0.1:54671
+1510211113089	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.StD5zj58Ho8Y"
+1510211113305	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1510211113846	Marionette	INFO	Enabled via --marionette
+1510211116137	Marionette	INFO	Listening on port 46411
+1510211116245	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510211116304	Marionette	DEBUG	Register listener.js for window 2147483649
+1510211116349	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510211118056	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1510211118056	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1510211124913	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510211128321	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510211129388	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211129643	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211131593	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211131855	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211132093	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211133188	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211134373	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211134622	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211135723	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211135970	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211136216	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211138856	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211467515	geckodriver	INFO	geckodriver 0.19.0
+1510211467519	geckodriver	INFO	Listening on 127.0.0.1:46953
+1510211468652	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.N0HyR6p8WdmZ"
+1510211468873	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1510211469442	Marionette	INFO	Enabled via --marionette
+1510211471855	Marionette	INFO	Listening on port 34021
+1510211471885	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510211471933	Marionette	DEBUG	Register listener.js for window 2147483649
+1510211471975	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510211477967	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1510211477968	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1510211487589	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510211491064	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510211492101	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211492352	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211494310	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211494562	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211494814	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211495915	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211497090	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211497326	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211498507	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211498753	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211499010	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510211501828	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212770600	geckodriver	INFO	geckodriver 0.19.0
+1510212770603	geckodriver	INFO	Listening on 127.0.0.1:53091
+1510212771747	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Jlm51F1THk1N"
+1510212771956	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1510212772496	Marionette	INFO	Enabled via --marionette
+1510212774660	Marionette	INFO	Listening on port 40169
+1510212774779	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510212774828	Marionette	DEBUG	Register listener.js for window 2147483649
+1510212774869	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510212779675	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1510212779675	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1510212796121	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510212844966	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510212846029	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212846284	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212848348	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212848618	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212848857	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212849979	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212851171	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212851433	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212852632	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212852908	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212853158	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510212855934	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 10653] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-l1g98U/firefox-56.0+build6/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1510215141594	geckodriver	INFO	geckodriver 0.19.0
+1510215141597	geckodriver	INFO	Listening on 127.0.0.1:59179
+1510215142747	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.rmDmgXp2vJrX"
+1510215142960	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1510215143469	Marionette	INFO	Enabled via --marionette
+1510215145609	Marionette	INFO	Listening on port 35769
+1510215145724	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510215145776	Marionette	DEBUG	Register listener.js for window 2147483649
+1510215145811	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510215146352	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1510215146353	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1510215155003	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510215160308	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510215161363	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215161622	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215165127	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215165381	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215165645	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215166837	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215168002	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215168251	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215169349	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215169619	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215169871	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510215172730	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510426928010	geckodriver	INFO	geckodriver 0.19.0
+1510426928068	geckodriver	INFO	Listening on 127.0.0.1:39691
+1510426929196	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.3PHXT0oGTC7U"
+1510426933680	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1510426935483	Marionette	INFO	Enabled via --marionette
+1510426941886	Marionette	INFO	Listening on port 43493
+1510426941955	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510426941999	Marionette	DEBUG	Register listener.js for window 2147483649
+1510426942079	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510426962050	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: timeout
+1510426992209	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510426992268	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1510426992269	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1510426992315	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=dnsNotFound&u=https%3A//www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg%3Fpid%3DMOBEMK62PN2HU7EE&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20www.flipkart.com."
+1510427107114	geckodriver	INFO	geckodriver 0.19.0
+1510427107117	geckodriver	INFO	Listening on 127.0.0.1:54795
+1510427108247	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.s8Ut3jrtTPZS"
+1510427108462	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///usr/lib/firefox/omni.ja!/components/addonManager.js:65
+1510427109075	Marionette	INFO	Enabled via --marionette
+1510427111402	Marionette	INFO	Listening on port 35857
+1510427111502	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510427111566	Marionette	DEBUG	Register listener.js for window 2147483649
+1510427111626	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510427117422	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1510427117423	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1510427130776	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510427150676	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.flipkart.com/apple-iphone-7-black-32-gb/product-reviews/itmen6daftcqwzeg?pid=MOBEMK62PN2HU7EE"
+1510427151741	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427151999	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427153940	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427154184	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427154435	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427155520	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427156693	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427156931	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427158080	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427158316	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427158577	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510427161262	Marionette	DEBUG	Canceled page load listener because no navigation has been detected

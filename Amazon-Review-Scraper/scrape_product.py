@@ -132,8 +132,8 @@ def ReadAsin():
 	cur.execute("SELECT * FROM phones")
 	AsinList = ['B00YD547Q6']
 	# print all the first cell of all the rows
-	for row in cur.fetchall():
-	    AsinList.append(row[2]);
+	# for row in cur.fetchall():
+	#     AsinList.append(row[2]);
 
 	#Add your own ASINs here 
 	print AsinList
