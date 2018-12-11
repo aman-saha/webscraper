@@ -1,150 +1,78 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-#written by @amansaha
-import MySQLdb
 from lxml import html  
-import json
+import csv,os,json
 import requests
-import json,re
-from dateutil import parser as dateparser
+from exceptions import ValueError
 from time import sleep
-
-def ParseReviews(asin):
-	# Added Retrying 
-	for i in range(5):
-		try:
-			#This script has only been tested with Amazon.com
-			amazon_url  = 'http://www.amazon.com/dp/'+asin
-			# Add some recent user agent to prevent amazon from blocking the request 
-			# Find some chrome user agent strings  here https://udger.com/resources/ua-list/browser-detail?browser=Chrome
-			headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'}
-			page = requests.get(amazon_url,headers = headers)
-			page_response = page.text
-
-			parser = html.fromstring(page_response)
-			XPATH_AGGREGATE = '//span[@id="acrCustomerReviewText"]'
-			XPATH_REVIEW_SECTION_1 = '//div[contains(@id,"reviews-summary")]'
-			XPATH_REVIEW_SECTION_2 = '//div[@data-hook="review"]'
-
-			XPATH_AGGREGATE_RATING = '//table[@id="histogramTable"]//tr'
-			XPATH_PRODUCT_NAME = '//h1//span[@id="productTitle"]//text()'
-			XPATH_PRODUCT_PRICE  = '//span[@id="priceblock_ourprice"]/text()'
-			
-			raw_product_price = parser.xpath(XPATH_PRODUCT_PRICE)
-			product_price = ''.join(raw_product_price).replace(',','')
-
-			raw_product_name = parser.xpath(XPATH_PRODUCT_NAME)
-			product_name = ''.join(raw_product_name).strip()
-			total_ratings  = parser.xpath(XPATH_AGGREGATE_RATING)
-			reviews = parser.xpath(XPATH_REVIEW_SECTION_1)
-			if not reviews:
-				reviews = parser.xpath(XPATH_REVIEW_SECTION_2)
-			ratings_dict = {}
-			reviews_list = []
-			
-			if not reviews:
-				raise ValueError('unable to find reviews in page')
-
-			#grabing the rating  section in product page
-			for ratings in total_ratings:
-				extracted_rating = ratings.xpath('./td//a//text()')
-				if extracted_rating:
-					rating_key = extracted_rating[0] 
-					raw_raing_value = extracted_rating[1]
-					rating_value = raw_raing_value
-					if rating_key:
-						ratings_dict.update({rating_key:rating_value})
-			#Parsing individual reviews
-			for review in reviews:
-				XPATH_RATING  = './/i[@data-hook="review-star-rating"]//text()'
-				XPATH_REVIEW_HEADER = './/a[@data-hook="review-title"]//text()'
-				XPATH_REVIEW_POSTED_DATE = './/a[contains(@href,"/profile/")]/parent::span/following-sibling::span/text()'
-				XPATH_REVIEW_TEXT_1 = './/div[@data-hook="review-collapsed"]//text()'
-				XPATH_REVIEW_TEXT_2 = './/div//span[@data-action="columnbalancing-showfullreview"]/@data-columnbalancing-showfullreview'
-				XPATH_REVIEW_COMMENTS = './/span[@data-hook="review-comment"]//text()'
-				XPATH_AUTHOR  = './/a[contains(@href,"/profile/")]/parent::span//text()'
-				XPATH_REVIEW_TEXT_3  = './/div[contains(@id,"dpReviews")]/div/text()'
-				raw_review_author = review.xpath(XPATH_AUTHOR)
-				raw_review_rating = review.xpath(XPATH_RATING)
-				raw_review_header = review.xpath(XPATH_REVIEW_HEADER)
-				raw_review_posted_date = review.xpath(XPATH_REVIEW_POSTED_DATE)
-				raw_review_text1 = review.xpath(XPATH_REVIEW_TEXT_1)
-				raw_review_text2 = review.xpath(XPATH_REVIEW_TEXT_2)
-				raw_review_text3 = review.xpath(XPATH_REVIEW_TEXT_3)
-
-				author = ' '.join(' '.join(raw_review_author).split()).strip('By')
-
-				#cleaning data
-				review_rating = ''.join(raw_review_rating).replace('out of 5 stars','')
-				review_header = ' '.join(' '.join(raw_review_header).split())
-				review_posted_date = dateparser.parse(''.join(raw_review_posted_date)).strftime('%d %b %Y')
-				review_text = ' '.join(' '.join(raw_review_text1).split())
-
-				#grabbing hidden comments if present
-				if raw_review_text2:
-					json_loaded_review_data = json.loads(raw_review_text2[0])
-					json_loaded_review_data_text = json_loaded_review_data['rest']
-					cleaned_json_loaded_review_data_text = re.sub('<.*?>','',json_loaded_review_data_text)
-					full_review_text = review_text+cleaned_json_loaded_review_data_text
-				else:
-					full_review_text = review_text
-				if not raw_review_text1:
-					full_review_text = ' '.join(' '.join(raw_review_text3).split())
-
-				raw_review_comments = review.xpath(XPATH_REVIEW_COMMENTS)
-				review_comments = ''.join(raw_review_comments)
-				review_comments = re.sub('[A-Za-z]','',review_comments).strip()
-				review_dict = {
-									'review_comment_count':review_comments,
-									'review_text':full_review_text,
-									'review_posted_date':review_posted_date,
-									'review_header':review_header,
-									'review_rating':review_rating,
-									'review_author':author
-
-								}
-				reviews_list.append(review_dict)
-
-			data = {
-						'ratings':ratings_dict,
-						'reviews':reviews_list,
-						'url':amazon_url,
-						'price':product_price,
-						'name':product_name
-					}
-			return data
-		except ValueError:
-			print "Retrying to get the correct response"
-	
-	return {"error":"failed to process the page","asin":asin}
-			
+ 
+def AmzonParser(url):
+    headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'}
+    page = requests.get(url,headers=headers)
+    while True:
+        sleep(3)
+        try:
+            doc = html.fromstring(page.content)
+            XPATH_NAME = '//h1[@id="title"]//text()'
+            XPATH_SALE_PRICE = '//span[contains(@id,"ourprice") or contains(@id,"saleprice")]/text()'
+            XPATH_ORIGINAL_PRICE = '//td[contains(text(),"List Price") or contains(text(),"M.R.P") or contains(text(),"Price")]/following-sibling::td/text()'
+            XPATH_CATEGORY = '//a[@class="a-link-normal a-color-tertiary"]//text()'
+            XPATH_AVAILABILITY = '//div[@id="availability"]//text()'
+ 
+            RAW_NAME = doc.xpath(XPATH_NAME)
+            RAW_SALE_PRICE = doc.xpath(XPATH_SALE_PRICE)
+            RAW_CATEGORY = doc.xpath(XPATH_CATEGORY)
+            RAW_ORIGINAL_PRICE = doc.xpath(XPATH_ORIGINAL_PRICE)
+            RAw_AVAILABILITY = doc.xpath(XPATH_AVAILABILITY)
+ 
+            NAME = ' '.join(''.join(RAW_NAME).split()) if RAW_NAME else None
+            SALE_PRICE = ' '.join(''.join(RAW_SALE_PRICE).split()).strip() if RAW_SALE_PRICE else None
+            CATEGORY = ' > '.join([i.strip() for i in RAW_CATEGORY]) if RAW_CATEGORY else None
+            ORIGINAL_PRICE = ''.join(RAW_ORIGINAL_PRICE).strip() if RAW_ORIGINAL_PRICE else None
+            AVAILABILITY = ''.join(RAw_AVAILABILITY).strip() if RAw_AVAILABILITY else None
+ 
+            if not ORIGINAL_PRICE:
+                ORIGINAL_PRICE = SALE_PRICE
+ 
+            if page.status_code!=200:
+                raise ValueError('captha')
+            data = {
+                    'NAME':NAME,
+                    'SALE_PRICE':SALE_PRICE,
+                    'CATEGORY':CATEGORY,
+                    'ORIGINAL_PRICE':ORIGINAL_PRICE,
+                    'AVAILABILITY':AVAILABILITY,
+                    'URL':url,
+                    }
+ 
+            return data
+        except Exception as e:
+            print e
+ 
 def ReadAsin():
-	db = MySQLdb.connect(host="localhost",    # your host, usually localhost
-                     user="root",         # your username
-                     passwd="root",  # your password
-                     db="amazon_products")        # name of the data base
-
-	# you must create a Cursor object. It will let
-	#  you execute all the queries you need
-	cur = db.cursor()
-
-	# Use all the SQL you like
-	cur.execute("SELECT * FROM phones")
-	AsinList = ['B00YD547Q6']
-	# print all the first cell of all the rows
-	# for row in cur.fetchall():
-	#     AsinList.append(row[2]);
-
-	#Add your own ASINs here 
-	print AsinList
-	extracted_data = []
-	for asin in AsinList:
-		print "Downloading and processing page http://www.amazon.com/dp/"+asin
-		extracted_data.append(ParseReviews(asin))
-		sleep(10)
-	f = open('data.json','w')
-	json.dump(extracted_data,f,indent=4)
-	db.close()
-
-if __name__ == '__main__':
-	ReadAsin()
+    # AsinList = csv.DictReader(open(os.path.join(os.path.dirname(__file__),"Asinfeed.csv")))
+    AsinList = ['B00O9A48N2','B00GJYCIVK','B00EPGKA4G','B075QNGDZD','B00KGD0628']
+    # 'B0046UR4F4'
+    # 'B00JGTVU5A',
+    # 'B00GJYCIVK',
+    # 'B00EPGK7CQ',
+    # 'B00EPGKA4G',
+    # 'B00YW5DLB4',
+    # 'B00KGD0628',
+    # 'B00O9A48N2',
+    # 'B00O9A4MEW',
+    # 'B00UZKG8QU',
+    # 'B075QNGDZD'
+    extracted_data = []
+    kk = 0
+    for i in AsinList:
+        url = "http://www.amazon.com/dp/"+i
+        print "Processing: "+url
+        extracted_data.append(AmzonParser(url))
+        sleep(5)
+        fname = "data"+str(kk);
+        f=open(fname,'w')
+        json.dump(extracted_data,f,indent=4)
+        kk+=1
+ 
+ 
+if __name__ == "__main__":
+    ReadAsin()
