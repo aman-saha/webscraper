@@ -54,7 +54,7 @@
 
 		public function __construct()
 		{
-			$this->arrBayesDifference = range(-1.0, 1.5, 0.1);
+			$this->arrBayesDifference = range(-1.0, 1.5, 0.1); //neutral range!!
 		}
 
 		private function splitSentence($words)
@@ -81,18 +81,18 @@
 				else
 				{
 					$amountTracker++;
-					$this->cntSentence += 1;
-					$this->arrSentenceType[$testDataType] += 1;
+					$this->cntSentence += 1;					//counting number of sentences.
+					$this->arrSentenceType[$testDataType] += 1; // counting postive/negative sentences
 					$words = self::splitSentence($testDatum)[0];
 					foreach ($words as $word)
 					{
 						$this->arrWordType[$testDataType] += 1;
 						$this->cntWord += 1;
-						if (!isset($this->arrSentiments[$word][$testDataType]))
+						if (!isset($this->arrSentiments[$word][$testDataType]))	//inserting words in 2d matrix.
 						{
 							$this->arrSentiments[$word][$testDataType] = 0;
 						}
-						$this->arrSentiments[$word][$testDataType] += 1;
+						$this->arrSentiments[$word][$testDataType] += 1;	// (word,positve) = x, (word,negative) = y
 					}
 				}
 			}
@@ -103,6 +103,8 @@
 		{
 			foreach ($this->arrTypes as $type)
 			{
+				//postive = no. of positive sentence/total no. of sentences
+				//negative = no. of negative sentence/total no. of sentences
 				$this->arrBayesDistribution[$type] = $this->arrSentenceType[$type] / $this->cntSentence;
 			}
 			$sentimentScores = array('positive', 'negative');
@@ -118,9 +120,9 @@
 					}
 					else
 					{
-						$tracker = $this->arrSentiments[$word][$type];
+						$tracker = $this->arrSentiments[$word][$type]; //how many times used positively/negatively.
 					}
-					$sentimentScores[$type] *= ($tracker + 1) / ($this->arrWordType[$type] + $this->cntWord);
+					$sentimentScores[$type] *= ($tracker + 1) / ($this->arrWordType[$type] + $this->cntWord); //laplace smoothing
 				}
 				$sentimentScores[$type] *= $this->arrBayesDistribution[$type];
 			}
@@ -134,8 +136,10 @@
 			{
 				$bayesDifference = $sentimentScores['negative'] / $sentimentScores['positive'];
 			}
+			
 			$positivity = $sentimentScores['positive'] / ($sentimentScores['positive'] + $sentimentScores['negative']);
 			$negativity = $sentimentScores['negative'] / ($sentimentScores['positive'] + $sentimentScores['negative']);
+			
 			if (in_array(round($bayesDifference, 1), $this->arrBayesDifference))
 			{
 				$sentiment = 'Neutral';
@@ -151,11 +155,11 @@
 
 		public function analyzeDocument($documentLocation)
 		{
-			$documentHandle = fopen($documentLocation, 'r');
+			$documentHandle = fopen($documentLocation, 'r');	//opening the document.
 			$positivity = 0; $negativity = 0;
-			while ($sentence = fgets($documentHandle))
+			while ($sentence = fgets($documentHandle))			//getting individual sentences
 			{
-				$sentiment = self::analyzeSentence($sentence);
+				$sentiment = self::analyzeSentence($sentence);	//passing each sentence to a function
 				if ($sentiment['sentiment'] == 'negative')
 				{
 					$negativity += 1;
